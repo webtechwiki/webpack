@@ -113,7 +113,45 @@ module: {
 从新运行编译命令，终端不再报错，并已实现效果
 
 
+### 5. 加在图片
 
+网页在加在图片的时候，实际上是使用`img`标签加在网页远端的互联网图片，实际上图片可以转成 base64 的字符串，如果是很小的图片，我们就可以使用 base64 字符串的方式加载，减少了再一次请求互联网带来的时间延迟。这也算是前端性能优化的一个小手段。
+
+不过，base64的字符串实际上比原图片占用的空间稍微大一点，所以大图片并不是和转成base64的图片。
+
+
+接下来介绍打包处理样式表中与url 路径相关的文件。
+运行 `npm i url-loader@4.1.1 file-loader@6.2.0 -D`命令，在`webpack.config.js`的module->rules数组中，添加 loader 规则如下：
+
+```javascript
+module: {
+	rules: [
+	  { test: /\.jpg|png|gif$/, use: 'url-loader?limit=22229' }
+	]
+}
+```
+其中，在 `?` 之后是loader 的参数项
+- limit：用来指定图片的大小，单位是字节（byte）
+- 只有 <= limit 大小的图片，才会被转为 base64 格式的图片
+
+
+接下来，我们动态地在界面上加在一张图片，打开 `index.html` 文件，在`<body>`节点借书前添加 `img`标签，如下代码：
+```html
+<!-- 需求：把 src/images/logo.jpg 设置给 src 属性 -->
+<img src="" class="box">
+</body>
+```
+
+后在 `index1.js` 中导入图片，得到图片文件，并加载到 img 标签，如下代码
+```javascript
+// 1. 导入图片，得到图片文件
+import logo from './img/logo.png'
+
+// 2. 给img标签的 src 动态赋值
+$('.box').attr('src', logo)
+```
+
+重新编译，即可成功看到浏览器成功加载了图片，如果我们使用 `console.log(logo)` 将 `logo` 打印出来，将看到的是base64 的字符串
 
 
 

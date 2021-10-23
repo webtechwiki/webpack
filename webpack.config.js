@@ -26,7 +26,10 @@ module.exports = {
           // 处理 css 文件的 loader
           { test: /\.css$/, use: ['style-loader', 'css-loader'] },
           // 处理 less 文件的 loader
-          { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }
+          { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
+          // 处理文件图片的loader
+          // 如果要调用的 loader 只有一个，则只传递一个字符串也行，如果多个 loader ，则必须指定数组
+          { test: /\.jpg|png|gif$/, use: 'url-loader?limit=22229' }
         ]
     }
 };

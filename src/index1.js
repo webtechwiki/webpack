@@ -1,9 +1,15 @@
 // 使用es6语法，导入jquey
-import $ from "jquery";
+import $ from "jquery"
 // 导入样式（在webpack中，一切皆模块，都可以通过es6导入语法进行导入和使用）
-import './css/index.css';
+import './css/index.css'
 // 引入less样式
-import './css/index.less';
+import './css/index.less'
+
+// 1. 导入图片，得到图片文件
+import logo from './img/logo.png'
+
+// 2. 给img标签的 src 动态赋值
+$('.box').attr('src', logo)
 
 // 定义jquery入口函数
 $(function () {
