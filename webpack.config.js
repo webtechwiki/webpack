@@ -8,6 +8,8 @@ const htmlPlugin = new HtmlPlugin({
     filename: "./index.html", // 指定生成文件存放的路径
 });
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+
 module.exports = {
     mode: "development", // mode 用来指定构建模式，可选值有 development 和 production
     entry: path.join(__dirname, './src/index1.js'), // 打包入口文件的路径
@@ -15,7 +17,7 @@ module.exports = {
         path: path.join(__dirname, 'dist'), // 输出文件的存放路径
         filename: "js/bundle.js" // 输出文件名称
     },
-    plugins: [htmlPlugin],
+    plugins: [htmlPlugin, new CleanWebpackPlugin()],
     devServer: {
         open: true,
         host: '127.0.0.1',

@@ -47,6 +47,28 @@ output: {
 }
 ```
 
+自动清理 dist 目录下的旧文件
+
+为了每次打包的时候自动清理掉 dist 目录中的旧文件，可以安装 并配置 clean-webpack-plugin 插件
+
+安装 清理 dist 目录的 webpack 插件
+
+```shell
+npm install clean-webpack-plugin@3.0.0 -D
+```
+
+ 按需导入、得到插件的构造函数后，创建插件的实例对象
+ 
+```javascript
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const cleanPlugin = new CleanWebpackPlugin()
+```
+
+把创建的 cleanPlugin 插件实例对象，挂在到 plugins 节点中
+```javascript
+plugins: [htmlPlugin, cleanPlugin]
+```
+
 
 
 
