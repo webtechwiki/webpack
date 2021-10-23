@@ -20,6 +20,14 @@ module.exports = {
         open: true,
         host: '127.0.0.1',
         port: 8080
+    },
+    module: {
+        rules: [
+          // 处理 css 文件的 loader
+          { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+          // 处理 less 文件的 loader
+          { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] }
+        ]
     }
 };
 
