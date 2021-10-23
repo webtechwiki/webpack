@@ -1,5 +1,8 @@
 // 使用es6语法，导入jquey
 import $ from "jquery"
+
+// 如果某个模块中，使用from 接受到的成员为 undefined, 则没有必要进行接口，也就是使用 import 即可，没必要使用 import from
+
 // 导入样式（在webpack中，一切皆模块，都可以通过es6导入语法进行导入和使用）
 import './css/index.css'
 // 引入less样式
