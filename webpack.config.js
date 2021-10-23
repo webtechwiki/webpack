@@ -37,5 +37,11 @@ module.exports = {
             // 使用 babel-loader处理 高级js语法
             { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
         ]
+    },
+    resolve: {
+        alias: {
+            // 告诉 webpack ，项目中的代码，@ 符号表示 src 目录
+            '@': path.join(__dirname, './src/')
+        }
     }
 };
