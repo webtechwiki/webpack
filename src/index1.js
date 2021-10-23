@@ -11,8 +11,10 @@ import './css/index.less'
 // 1. 导入图片，得到图片文件
 import logo from './images/logo.png'
 
+
 // 2. 给img标签的 src 动态赋值
 $('.box').attr('src', logo)
+
 
 // 定义jquery入口函数
 $(function() {
@@ -31,4 +33,8 @@ function info(target) {
 @info
 class Person {}
 
-console.log(Person.info)
+consol.log(Person.info)
+
+
+
+

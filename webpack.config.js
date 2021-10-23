@@ -12,6 +12,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 module.exports = {
     mode: "development", // mode 用来指定构建模式，可选值有 development 和 production
+    // 在开发调试阶段，建议都把 devtool 的值设置为 'eval-source-map'
+    devtool: 'nosources-source-map', // eval-source-map ：浏览器中与实际源码一一对应，nosources-source-map：浏览器有对应行号，但没有实际源码
     entry: path.join(__dirname, './src/index1.js'), // 打包入口文件的路径
     output: {
         path: path.join(__dirname, 'dist'), // 输出文件的存放路径
