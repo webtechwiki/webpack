@@ -153,6 +153,35 @@ $('.box').attr('src', logo)
 
 重新编译，即可成功看到浏览器成功加载了图片，如果我们使用 `console.log(logo)` 将 `logo` 打印出来，将看到的是base64 的字符串
 
+### 6. 打包处理 js 文件中的 高级语法
+webpack 只能处理一部分高级的 javascript 语法。对于那些 webpack 无法 处理的 js 语法，需要借助于 babel-loader 进行打包处理。 
+
+在 `index1.js` 中添加以下代码，webpack 无法处理并报错：
+
+```javascript
+// 1. 定义名为 info 的装饰器
+function info(target) {
+	// 2. 为目标添加静态属性 info
+	target.info = 'Person info'
+}
+
+// 3. 为Person 类应用 info 装饰器
+@info
+class Person {}
+
+// 4. 打印 Person 的静态属性 info
+console.log(Person.info)
+```
+
+为了解决以上问题，我们需要安装 babel-loader 相关的包
+运行如下命令安装对应的依赖包：
+```shell
+npm i babel-loader@8.2.2 @babel/core@7.14.6 @babel/plugin-proposal-decorators@7.14.5 -D
+```
+
+
+
+
 
 
 

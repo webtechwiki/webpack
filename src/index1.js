@@ -21,3 +21,21 @@ $(function () {
     // 偶数变成绿色
     $('li:even').css('background-color', 'green')
 })
+
+// 定义一个装饰器函数
+function info(target) {
+    target.info = 'Person info.'
+}
+
+// 定义一个普通的类
+@info
+class Person {}
+
+console.log(Person.info)
+
+
+
+
+
+
+
