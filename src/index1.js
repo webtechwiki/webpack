@@ -9,13 +9,13 @@ import './css/index.css'
 import './css/index.less'
 
 // 1. 导入图片，得到图片文件
-import logo from './img/logo.png'
+import logo from './images/logo.png'
 
 // 2. 给img标签的 src 动态赋值
 $('.box').attr('src', logo)
 
 // 定义jquery入口函数
-$(function () {
+$(function() {
     // 奇数变成红色
     $('li:odd').css('background-color', 'red')
     // 偶数变成绿色
@@ -32,10 +32,3 @@ function info(target) {
 class Person {}
 
 console.log(Person.info)
-
-
-
-
-
-
-
