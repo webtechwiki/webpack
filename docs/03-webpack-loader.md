@@ -179,9 +179,42 @@ console.log(Person.info)
 npm i babel-loader@8.2.2 @babel/core@7.14.6 @babel/plugin-proposal-decorators@7.14.5 -D
 ```
 
+在 `webpack.config.js` 的 module -> rules 数组中，添加 loader 规则如下
+```javascript
+// 注意，必须使用 exclude 指定排除项，因为 node_module 目录下的第三方包不需要被打包
+{ test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
+```
 
+同时，在项目的根目录下，创建名为`babel.config.js`的配置文件，定义babel 的配置项如下：
+```json
+module.exports = {
+	// 声明babel 可用插件，webpack 在调用 babel-loader 的时候，会加载 plugins 插件来使用
+	"plugins": [
+	  [
+	    "@babel/plugin-proposal-decorators",
+	    {
+	      "legacy": true
+	    }
+	  ]
+	]	
+}
+```
 
+babel的声明还可以使用另一种方式，在 `package.json` 中定义，如下代码：
+```json
+"babel": {
+	"plugins": [
+	  [
+	    "@babel/plugin-proposal-decorators",
+	    {
+	      "legacy": true
+	    }
+	  ]
+	]
+}
+```
 
+重新编译，可看到代码正常运行
 
 
 

@@ -29,7 +29,9 @@ module.exports = {
           { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
           // 处理文件图片的loader
           // 如果要调用的 loader 只有一个，则只传递一个字符串也行，如果多个 loader ，则必须指定数组
-          { test: /\.jpg|png|gif$/, use: 'url-loader?limit=22229' }
+          { test: /\.jpg|png|gif$/, use: 'url-loader?limit=22229' },
+          // 使用 babel-loader处理 高级js语法
+          { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
         ]
     }
 };
