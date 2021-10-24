@@ -1,11 +1,7 @@
 # 前端工程化解决方案 -- Webpack
 
-完成 P23 7:53
-
-项目目录
-
 ```
-├─docs                        文档
+├─docs                        文文档目录
 ├─src                         示例代码
 ├─package.json                npm项目依赖管理配置文件
 └─webpack.config.php          webpack配置文件
@@ -51,3 +47,12 @@
 ## 二、文档列表
 - [01-webpack的基本使用](./docs/01-webpack-basic.md)
 - [02-webpack中的插件](./docs/02-webpack-plugin.md)
+- [03-webpack中的加载器](./docs/03-webpack-loader.md)
+- [04-打包构建](./docs/04-build.md)
+- [05-源码对应](./docs/05-sourcemap.md)
+- [06-总结](./docs/06-summary.md)
+
+
+
+
+
