@@ -49,7 +49,7 @@
 - [02-webpack中的插件](./docs/02-webpack-plugin.md)
 - [03-webpack中的加载器](./docs/03-webpack-loader.md)
 - [04-打包构建](./docs/04-build.md)
-- [05-源码对应](./docs/05-sourcemap.md)
+- [05-SourceMap](./docs/05-sourcemap.md)
 - [06-总结](./docs/06-summary.md)
 
 
