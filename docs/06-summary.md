@@ -26,14 +26,15 @@ import '@/css/index.css'
 
 ```javascript
 resolve: {
-	alias: {
-		// 告诉 webpack ，项目中的代码，@ 符号表示 src 目录
-		'@': path.join(__dirname, './src/')
-	}
+    alias: {
+        // 告诉 webpack ，项目中的代码，@ 符号表示 src 目录
+        '@': path.join(__dirname, './src/')
+    }
 }
 ```
 
 添加以上配置后，我们在之前 js  文件中都可以使用 `@` (对应src目录) 作为导入文件的相对路径，如下代码
+
 ```javascript
 // 导入css样式
 import '@/css/index.css'
@@ -43,9 +44,6 @@ import '@/css/index.less'
 import logo from '@/images/logo.png'
 ```
 
-
 ## 三、最后
 
-到此结束，环境关注作者的微信公众号 **极客开发者up**
-
-
+到此结束，环境关注作者的微信公众号 **极客开发者**

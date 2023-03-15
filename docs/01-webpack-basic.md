@@ -32,9 +32,9 @@ cd test && npm init -y
 
 同时，在项目根目录下创建`src`目录，用于存放项目源代码，并且在 src 目录下创建 `index.html` 和 `index.js` 两个文件。接下来我们使用 jquery 来实现隔行变色效果。
 
-
 首先使用 npm 安装 jquery
-```
+
+```shell
 npm install jquery
 ```
 
@@ -122,20 +122,19 @@ scripts 节点下的脚本，可以通过 `npm run` 执行，例如 `npm run dev
 
 最终，在项目根目录生成 `dist` 目录，并在 dist 目录中生成 `main.js` 文件，我们将 `index.html` 引入的 js 文件改为 `../dist/main.js` ，再次打开浏览器，已经看到隔行预想的效果。
 
-
 ## 二、webpack 的基本使用
 
 通过上面的案例，我们已经成功的进行 webpack 的配置，并使用 webpack 进行项目打包。下面总结 webpack 的基本使用
 
 ### 1. mode 的可选值
 
-**development**
+`development`
 
 1. 用于开发环境
 2. 不会对打包生成的文件进行代码压缩和性能优化
 3. 打包速度快，适合在开发阶段使用
 
-**production**
+`production`
 
 1. 用于生产环境
 2. 会对打包生成的文件进行啊代码压缩和性能优化

@@ -6,8 +6,8 @@
 
 ```javascript
 "scripts": {
-	"dev": "webpack serve", // 开发环境中，运行 dev 命令
-	"build": "webpack --mode production" // 项目发布时，运行 build 命令
+    "dev": "webpack serve", // 开发环境中，运行 dev 命令
+    "build": "webpack --mode production" // 项目发布时，运行 build 命令
 }
 ```
 
@@ -19,13 +19,14 @@
 ## 二、打包优化
 
 ### 1. 自定义js输出目录
+
 把生成的 js 文件统一放到 `js` 目录中，需要在 `webpack.config.js` 配置文件的配置 output 节点，如下代码
 
 ```javascript
 output: {
-	path: path.join(__dirname, 'dist')
-	// 明确告诉 webpack 把生成的 bundle.js 文件存放到 dist 目录下的 js 目录中
-	filename: 'js/bundle.js'
+    path: path.join(__dirname, 'dist')
+    // 明确告诉 webpack 把生成的 bundle.js 文件存放到 dist 目录下的 js 目录中
+    filename: 'js/bundle.js'
 }
 ```
 
@@ -40,17 +41,18 @@ output: {
 ```
 
 还可以写成以下的方式
+
 ```javascript
 {
-	test: /\.jpg|png|gif$/,
-	use: {
-		loader: 'url-loader',
-		options: {
-			limit: 13000,
-			// 明确指定打包生成的文件，存储到 dist 目录下的 images 文件夹中
-			outputPath: 'images'
-		}
-	}
+    test: /\.jpg|png|gif$/,
+    use: {
+        loader: 'url-loader',
+        options: {
+            limit: 13000,
+            // 明确指定打包生成的文件，存储到 dist 目录下的 images 文件夹中
+            outputPath: 'images'
+        }
+    }
 }
 ```
 
@@ -63,20 +65,14 @@ npm install clean-webpack-plugin@3.0.0 -D
 ```
 
 按需导入，得到插件的构造函数后，创建插件的实例对象
- 
+
 ```javascript
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const cleanPlugin = new CleanWebpackPlugin()
 ```
 
 把创建的 cleanPlugin 插件实例对象，挂在到 plugins 节点中
+
 ```javascript
 plugins: [htmlPlugin, cleanPlugin]
 ```
-
-
-
-
-
-
-
