@@ -1,0 +1,111 @@
+site_name: Webpack 实战教程 - 前端工程化解决方案
+site_description: 企业级前端工程化解决方案学习指南
+site_author: webtechwiki
+site_url: https://your-domain.com/
+use_directory_urls: false
+
+# Repository
+repo_name: webtechwiki/studywebpack
+repo_url: https://github.com/webtechwiki/studywebpack
+edit_uri: edit/main/docs/
+
+# Copyright
+copyright: Copyright &copy; 2024 webtechwiki
+
+# Configuration
+theme:
+  name: material
+  language: zh
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+
+# Plugins
+plugins:
+  - search:
+      lang: zh
+  - git-revision-date-localized:
+      enable_creation_date: true
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: webtechwiki
+      repo: studywebpack
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+# Page tree
+nav:
+  - 首页: index.md
+  - 学习指南:
+    - webpack基础使用: webpack-basic.md
+    - webpack插件: webpack-plugin.md
+    - webpack加载器: webpack-loader.md
+    - 打包构建: build.md
+    - SourceMap: sourcemap.md
+    - 总结: summary.md
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/webtechwiki/studywebpack
+  generator: false
